@@ -7,6 +7,6 @@ public class Main {
         unsortedObjectArray.insert(5);
         System.out.println(unsortedObjectArray.size());
         UnsortedIntArray unsortedIntArray = new UnsortedIntArray(10);
-        unsortedIntArray.insert(5).insert(10).insert(3);
+        unsortedIntArray.insert(5).insert(10).insert(3).delete(0);
     }
 }

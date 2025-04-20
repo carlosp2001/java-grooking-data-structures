@@ -17,11 +17,24 @@ public class UnsortedIntArray {
         return this;
     }
 
+    public UnsortedIntArray delete(int index) {
+        if (size == 0) {
+            throw new ArrayIndexOutOfBoundsException("Array is already empty");
+        } else if (index < 0 || index >= size) {
+            throw new ArrayIndexOutOfBoundsException("Invalid index");
+        } else {
+            array[index] = array[size - 1];
+            array[size - 1] = 0;
+            size--;
+        }
+        return this;
+    }
+
     public int get(int index) {
         if (index >= 0 && index < size) {
             return array[index];
         } else {
-            throw new IndexOutOfBoundsException("Invalid index");
+            throw new ArrayIndexOutOfBoundsException("Invalid index");
         }
     }
 
