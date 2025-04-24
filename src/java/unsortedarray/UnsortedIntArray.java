@@ -8,16 +8,16 @@ public class UnsortedIntArray {
         array = new int[maxSize];
     }
 
-    public UnsortedIntArray insert(int element) {
+    public void insert(int element) {
         if (size < array.length) {
             array[size++] = element;
         } else {
             throw new ArrayIndexOutOfBoundsException("Array is full");
         }
-        return this;
+
     }
 
-    public UnsortedIntArray delete(int index) {
+    public void delete(int index) {
         if (size == 0) {
             throw new ArrayIndexOutOfBoundsException("Array is already empty");
         } else if (index < 0 || index >= size) {
@@ -27,7 +27,6 @@ public class UnsortedIntArray {
             array[size - 1] = 0;
             size--;
         }
-        return this;
     }
 
     public int get(int index) {
@@ -36,6 +35,15 @@ public class UnsortedIntArray {
         } else {
             throw new ArrayIndexOutOfBoundsException("Invalid index");
         }
+    }
+
+    public int find(int element) {
+        for (int i = 0; i < size; i++) {
+            if (array[i] == element) {
+                return i;
+            }
+        }
+        return -1;
     }
 
     public int size() {
